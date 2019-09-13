@@ -9,14 +9,42 @@ module.exports = {
     publicPath: ''
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.wasm', '.mjs', '.js', '.jsx', '.json']
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins: () => [
+                require('autoprefixer')({
+                  browsers: [
+                    "> 1%",
+                    "last 2 versions"
+                  ]
+                })
+              ]
+            }
+          }
+        ]
       }
     ]
   }
