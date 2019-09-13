@@ -9,7 +9,7 @@ const AsyncPizza = asyncComponent(() => {
 });
 
 class App extends Component {
-    render () {
+    render() {
         return (
             <div>
                 <div>
@@ -24,3 +24,5 @@ class App extends Component {
         );
     }
 }
+
+export default App;
