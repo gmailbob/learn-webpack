@@ -1,0 +1,16 @@
+{
+  "name": "learn-webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Zhiyu Zhou <Zhiyu.Zhou@adp.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.40.2",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
